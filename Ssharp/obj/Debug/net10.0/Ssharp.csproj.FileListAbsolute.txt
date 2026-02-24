@@ -1,0 +1,14 @@
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\bin\Debug\net10.0\Ssharp.exe
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\bin\Debug\net10.0\Ssharp.deps.json
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\bin\Debug\net10.0\Ssharp.runtimeconfig.json
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\bin\Debug\net10.0\Ssharp.dll
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\bin\Debug\net10.0\Ssharp.pdb
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.AssemblyInfoInputs.cache
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.AssemblyInfo.cs
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.csproj.CoreCompileInputs.cache
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.dll
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\refint\Ssharp.dll
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.pdb
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\Ssharp.genruntimeconfig.cache
+C:\Users\Ayush baigra\Desktop\BENTEN\cc++dsacpp\Ssharp\obj\Debug\net10.0\ref\Ssharp.dll
