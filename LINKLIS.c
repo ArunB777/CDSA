@@ -32,12 +32,57 @@ void Display(struct Node *p)
         p=p->next;
     }
 }
+void RDisplay(struct Node *p)
+{
+    if(p!=NULL)
+    {
+        
+        RDisplay(p->next);
+        printf("%d ",p->data);
+    }
+}
+int count(struct Node *p)
+{
+    int l=0;
+    while(p!=NULL)
+    {
+        l++;
+        p=p->next;
+    }
+    return l;
+}
+int Rcount(struct Node *p)
+{
+    if(p!=NULL)
+        return Rcount(p->next)+1;
+    else
+        return 0;
+}
+
+int sum(struct Node *p)
+{
+    int s=0;
+    while(p!=NULL)
+    {
+        s+=p->data;
+        p=p->next;  
+    }
+    return s;
+}
+int Rsum(struct Node *p)
+{
+    if(p==NULL)
+        return 0;
+    else
+        return Rsum(p->next)+p->data;   
+}
 
 int main()
 {
-    int A[]={3,5,7,10,15};
-    create(A,5);
+    int A[]={3,5,7,10,15,116,85,88,96,45};
+    create(A,10);
 
-    Display(first);
+    printf("The number of nodes in the linked list is %d\n",count(first));
+    printf("The sum of the nodes in the linked list is %d\n",sum(first));
     return 0;
 }
