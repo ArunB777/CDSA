@@ -76,6 +76,29 @@ int Rsum(struct Node *p)
     else
         return Rsum(p->next)+p->data;   
 }
+int Max(struct Node *p)
+{
+    int max = -32768;
+    while(p)
+    {
+        if(p->data>max)
+            max=p->data;
+        p=p->next;
+    }
+    return max;
+
+}
+int RMax(struct Node *p)
+{
+    int x=0;
+    if(p==0)
+        return -32768;
+    x=RMax(p->next);
+    if(x>p->data)
+        return x;
+    else
+        return p->data;
+}
 
 int main()
 {
@@ -84,5 +107,6 @@ int main()
 
     printf("The number of nodes in the linked list is %d\n",count(first));
     printf("The sum of the nodes in the linked list is %d\n",sum(first));
+    printf("MAx id %d\n",RMax(first));
     return 0;
 }
