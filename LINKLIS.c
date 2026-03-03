@@ -99,14 +99,49 @@ int RMax(struct Node *p)
     else
         return p->data;
 }
+struct Node * LSearch(struct Node *p, int key)
+{
+    struct Node *q=NULL;
+    while(p!=NULL)
+    {
+        if(key==p->data){
+            if(q!=NULL)
+            
+            q->next=p->next;
+            p->next=first;
+            first=p;
+            
+            return p;
+        }
+        q=p;
+        p=p->next;
+    }
+    return NULL;
+}
+struct Node * RSearch(struct Node *p, int key)
+{
+    if(p==NULL)
+        return NULL;
+    if(key==p->data)
+        return p;
+    return RSearch(p->next,key);
+}
 
 int main()
 {
+    struct Node *temp;
     int A[]={3,5,7,10,15,116,85,88,96,45};
     create(A,10);
 
     printf("The number of nodes in the linked list is %d\n",count(first));
     printf("The sum of the nodes in the linked list is %d\n",sum(first));
     printf("MAx id %d\n",RMax(first));
+    temp = LSearch(first,15);
+    temp = LSearch(first,116);
+    if(temp)
+        printf("Key is Found %d",temp->data);
+    else
+        printf("key not found");
+    Display(first);
     return 0;
 }
