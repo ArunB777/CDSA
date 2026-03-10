@@ -127,21 +127,49 @@ struct Node * RSearch(struct Node *p, int key)
     return RSearch(p->next,key);
 }
 
+void SoretedInsert(struct Node *p,int x)
+{
+    struct Node *t,*q=NULL;
+
+    t=(struct Node*)malloc(sizeof(struct Node));
+    t->data=x;
+    t->next=NULL;
+
+    if(first==NULL)
+        first = t;
+    else{
+
+        while(p&&p->data<x)
+        {
+            q=p;
+            p=p->next;
+        }
+        if(p==first)
+        {
+            t->next=first;
+            first=t;
+        }
+        else{
+            t->next=q->next;
+            q->next=t;
+        }
+    }
+
+}
+
 int main()
 {
     struct Node *temp;
-    int A[]={3,5,7,10,15,116,85,88,96,45};
+    int A[]={3,5,7,10,15,85,88,96};
     create(A,10);
 
     printf("The number of nodes in the linked list is %d\n",count(first));
     printf("The sum of the nodes in the linked list is %d\n",sum(first));
-    printf("MAx id %d\n",RMax(first));
-    temp = LSearch(first,15);
-    temp = LSearch(first,116);
-    if(temp)
-        printf("Key is Found %d",temp->data);
-    else
-        printf("key not found");
+    
+    
+    SoretedInsert(first, 14);
+    SoretedInsert(first, 13);
     Display(first);
+    printf("\n \n");
     return 0;
 }
