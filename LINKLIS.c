@@ -156,6 +156,34 @@ void SoretedInsert(struct Node *p,int x)
     }
 
 }
+int Delete(struct Node *p,int index)
+{
+    struct Node *q;
+    int x=-1;
+
+    if(index < 1 || index > count(p))
+        return -1;
+    if(index==1)
+    {
+        q=first;
+        x=first->data;
+        first=first->next;
+        free(q);
+        return x;
+    }
+    else{
+        for(int i=0;i<index-1;i++)
+        {
+            q=p;
+            p=q->next;
+        }
+        q->next=p->next;
+        x=p->data;
+        free(p);
+        return x; 
+    }
+}
+
 
 int main()
 {
@@ -171,5 +199,8 @@ int main()
     SoretedInsert(first, 13);
     Display(first);
     printf("\n \n");
+
+    printf("Deleted Element %d\n", Delete(first, 4));
+    Display(first);
     return 0;
 }
