@@ -199,12 +199,35 @@ int isSorted(struct Node*p)
     }
     return 1;
 }
+void RemoveDuplicate(struct Node *p)
+{
+    struct Node *q=p->next;
+
+    while(q!=NULL)
+    {
+        if(p->data!=q->data)
+        {
+            p=q;
+            q=q->next;
+
+        }
+        else{
+            p->next=q->next;
+            free(q);
+            q=p->next;
+        }
+    }
+}
 
 int main()
 {
     struct Node *temp;
-    int A[]={3,5,7,10,15,85,88,96};
+    int A[]={3,5,10,10,15,15,88,96};
     create(A,8);
+    RemoveDuplicate(first);
+    Display(first);
+    printf("\n\n");
+
     if(isSorted(first))
     {
         printf("Sorted\n");
