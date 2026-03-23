@@ -185,12 +185,35 @@ int Delete(struct Node *p,int index)
 }
 
 
+int isSorted(struct Node*p)
+{
+    int x= -65536;
+
+    while(p!=NULL)
+    {
+        if(p->data < x)
+            return 0;
+        x=p->data;
+        p=p->next;
+
+    }
+    return 1;
+}
+
 int main()
 {
     struct Node *temp;
     int A[]={3,5,7,10,15,85,88,96};
-    create(A,10);
+    create(A,8);
+    if(isSorted(first))
+    {
+        printf("Sorted\n");
 
+    }
+    else
+    {
+        printf("Not Sorted\n");
+    }
     printf("The number of nodes in the linked list is %d\n",count(first));
     printf("The sum of the nodes in the linked list is %d\n",sum(first));
     
