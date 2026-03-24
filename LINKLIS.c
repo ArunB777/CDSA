@@ -5,7 +5,7 @@ struct Node
     int data;
     struct Node *next;
 
-}*first=NULL;
+}*first=NULL,*second=NULL,*third=NULL;
 void create(int A[], int n)
 {
     int i;
@@ -23,6 +23,26 @@ void create(int A[], int n)
         last=t;
     }
 }
+
+void create2(int A[], int n)
+{
+    int i;
+    struct Node *t,*last;
+    second=(struct Node *)malloc(sizeof(struct Node));
+    second->data=A[0];
+    second->next=NULL;
+    last=second;
+    for(i=1;i<n;i++)
+    {
+        t=(struct Node *)malloc(sizeof(struct Node));
+        t->data=A[i];
+        t->next=NULL;
+        last->next=t;
+        last=t;
+    }
+}
+
+    
 
 void Display(struct Node *p)
 {
@@ -266,17 +286,77 @@ void Reverse3(struct Node *q, struct Node *p)
         first = q;
 }
 
+void Concat(struct Node *p,struct Node *q)
+{
+    third =p;
+    while(p->next!=NULL)
+        p=p->next;
+    p->next=q;
+}
+
+void Merge(struct Node *p, struct Node *q)
+{
+    struct Node *last;
+    if(p->data < q->data)
+    {
+        third=last=p;
+        p=p->next;
+        third->next=NULL;
+    }
+    else
+    {
+        third=last=q;
+        q=q->next;
+        third->next=NULL;
+    }
+
+    while (p && q)
+    {
+        if(p->data < q->data)
+        {
+            last->next=p;
+            last=p;
+            p=p->next;
+            last->next=NULL;
+        }
+        else{
+            last->next=q;
+            last=q;
+            q=q->next;
+            last->next=NULL;
+        }
+    }
+    if(p)last->next=p;
+    if(q)last->next=q;
+    
+
+}
+
 int main()
 {
     struct Node *temp;
-    int A[]={3,5,10,10,15,15,88,96};
+    int A[]={1,3,5,7,10,12,15,88,96};
+    int B[]= {2,4,6,8,10};
     create(A,8);
+    create2(B,5);
     //RemoveDuplicate(first);
-    Reverse3(NULL,first);
-    Display(first);
-    printf("\n\n");
+    //Reverse3(NULL,first);
+    Merge(first,second);
+    Display(third);
+    //printf("First\n");
+    //Display(first);
+    //printf("\n\n");
 
-    if(isSorted(first))
+    //printf("Second\n");
+    //Display(second);
+    //printf("\n\n");
+    
+    //Concat(second,first);
+    //printf("concatinated \n");
+    //Display(third);
+    //printf("\n\n");
+
+    /*if(isSorted(first))
     {
         printf("Sorted\n");
 
@@ -285,16 +365,17 @@ int main()
     {
         printf("Not Sorted\n");
     }
+    */
     printf("The number of nodes in the linked list is %d\n",count(first));
-    printf("The sum of the nodes in the linked list is %d\n",sum(first));
+    //printf("The sum of the nodes in the linked list is %d\n",sum(first));
     
     
-    SoretedInsert(first, 14);
-    SoretedInsert(first, 13);
-    Display(first);
-    printf("\n \n");
+    //SoretedInsert(first, 14);
+    //SoretedInsert(first, 13);
+    //Display(first);
+    //printf("\n \n");
 
-    printf("Deleted Element %d\n", Delete(first, 4));
-    Display(first);
+    //printf("Deleted Element %d\n", Delete(first, 4));
+    //Display(first);
     return 0;
 }
