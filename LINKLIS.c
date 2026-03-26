@@ -331,18 +331,40 @@ void Merge(struct Node *p, struct Node *q)
     
 
 }
+int isLoop(struct Node *f)
+{
+    struct Node *p ,*q;
+    p=q=f;
+    do
+    {
+        p=p->next;
+        q=q->next;
+        q=q?q->next:q;
+    }while(p && q && p!=q);
+    if(p==q)
+        return 1;
+    else
+        return 0;
+}
 
 int main()
 {
-    struct Node *temp;
+    struct Node *temp,*t1,*t2;
     int A[]={1,3,5,7,10,12,15,88,96};
     int B[]= {2,4,6,8,10};
+    
     create(A,8);
     create2(B,5);
+    
+    t1 = first->next->next;              // node with value 5
+    t2 = first->next->next->next->next;  // node with value 10
+    t2->next = t1; 
+
+    printf("%d\n",isLoop(first));
     //RemoveDuplicate(first);
     //Reverse3(NULL,first);
-    Merge(first,second);
-    Display(third);
+    //Merge(first,second);
+    //Display(third);
     //printf("First\n");
     //Display(first);
     //printf("\n\n");
@@ -366,7 +388,7 @@ int main()
         printf("Not Sorted\n");
     }
     */
-    printf("The number of nodes in the linked list is %d\n",count(first));
+    //printf("The number of nodes in the linked list is %d\n",count(first));
     //printf("The sum of the nodes in the linked list is %d\n",sum(first));
     
     
